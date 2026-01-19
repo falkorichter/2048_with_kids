@@ -52,11 +52,11 @@ for i in [0,2,0,2]
 push bedeutet "an das Ende hinzufügen"
 
 ```
-empty = []					// leere List
+empty = []					// leere Liste mit dem Namen empty
 empty.push(2) 				// [2]
-empty.push(3)					// [2, 3]
+empty.push(3)				// [2, 3]
 empty.insert(5,0)			// [5, 2, 3]
-empty.clear()					// []
+empty.clear()				// []
 
 ```
 
