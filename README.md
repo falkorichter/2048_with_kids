@@ -1,3 +1,6 @@
+https://github.com/mevdschee/2048.c/blob/main/2048.c inspired by that one
+part of https://github.com/ligurio/awesome-ttygames?tab=readme-ov-file
+
 ```
 [
 	[0,0,0,0],
