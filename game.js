@@ -8,7 +8,24 @@ let gameState = [
 
 // Format the game state for display
 function formatGameState(state) {
-    return JSON.stringify(state, null, '\t');
+    let result = '[\n';
+    for (let i = 0; i < state.length; i++) {
+        result += '    [';
+        for (let j = 0; j < state[i].length; j++) {
+            const num = state[i][j].toString();
+            result += num.padStart(3, ' ');
+            if (j < state[i].length - 1) {
+                result += ',';
+            }
+        }
+        result += ']';
+        if (i < state.length - 1) {
+            result += ',';
+        }
+        result += '\n';
+    }
+    result += ']';
+    return result;
 }
 
 // Update the display
@@ -22,88 +39,16 @@ function cloneState(state) {
     return JSON.parse(JSON.stringify(state));
 }
 
-// Move tiles up
-function moveUp() {
-    const newState = cloneState(gameState);
-    
-    for (let col = 0; col < 4; col++) {
-        // Collect non-zero values in this column
-        let values = [];
-        for (let row = 0; row < 4; row++) {
-            if (newState[row][col] !== 0) {
-                values.push(newState[row][col]);
-            }
-        }
-        
-        // Merge adjacent equal values
-        let merged = [];
-        let i = 0;
-        while (i < values.length) {
-            if (i + 1 < values.length && values[i] === values[i + 1]) {
-                merged.push(values[i] * 2);
-                i += 2;
-            } else {
-                merged.push(values[i]);
-                i += 1;
-            }
-        }
-        
-        // Fill the column with merged values from top, rest with zeros
-        for (let row = 0; row < 4; row++) {
-            newState[row][col] = merged[row] || 0;
-        }
-    }
-    
-    gameState = newState;
-    updateDisplay();
-}
-
-// Move tiles down
-function moveDown() {
-    const newState = cloneState(gameState);
-    
-    for (let col = 0; col < 4; col++) {
-        // Collect non-zero values in this column (from bottom)
-        let values = [];
-        for (let row = 3; row >= 0; row--) {
-            if (newState[row][col] !== 0) {
-                values.push(newState[row][col]);
-            }
-        }
-        
-        // Merge adjacent equal values
-        let merged = [];
-        let i = 0;
-        while (i < values.length) {
-            if (i + 1 < values.length && values[i] === values[i + 1]) {
-                merged.push(values[i] * 2);
-                i += 2;
-            } else {
-                merged.push(values[i]);
-                i += 1;
-            }
-        }
-        
-        // Fill the column with merged values from bottom, rest with zeros
-        for (let row = 3; row >= 0; row--) {
-            newState[row][col] = merged[3 - row] || 0;
-        }
-    }
-    
-    gameState = newState;
-    updateDisplay();
-}
-
 // Move tiles left
 function moveLeft() {
     const newState = cloneState(gameState);
     
-    for (let row = 0; row < 4; row++) {
+    for (let zeile = 0; zeile < 4; zeile++) {
         // Collect non-zero values in this row
         let values = [];
-        for (let col = 0; col < 4; col++) {
-            if (newState[row][col] !== 0) {
-                values.push(newState[row][col]);
+        for (let spalte = 0; spalte < 4; spalte++) {
+            if (newState[zeile][spalte] !== 0) {
+                values.push(newState[zeile][spalte]);
             }
         }
         
@@ -121,44 +66,8 @@ function moveLeft() {
         }
         
         // Fill the row with merged values from left, rest with zeros
-        for (let col = 0; col < 4; col++) {
-            newState[row][col] = merged[col] || 0;
-        }
-    }
-    
-    gameState = newState;
-    updateDisplay();
-}
-
-// Move tiles right
-function moveRight() {
-    const newState = cloneState(gameState);
-    
-    for (let row = 0; row < 4; row++) {
-        // Collect non-zero values in this row (from right)
-        let values = [];
-        for (let col = 3; col >= 0; col--) {
-            if (newState[row][col] !== 0) {
-                values.push(newState[row][col]);
-            }
-        }
-        
-        // Merge adjacent equal values
-        let merged = [];
-        let i = 0;
-        while (i < values.length) {
-            if (i + 1 < values.length && values[i] === values[i + 1]) {
-                merged.push(values[i] * 2);
-                i += 2;
-            } else {
-                merged.push(values[i]);
-                i += 1;
-            }
-        }
-        
-        // Fill the row with merged values from right, rest with zeros
-        for (let col = 3; col >= 0; col--) {
-            newState[row][col] = merged[3 - col] || 0;
+        for (let spalte = 0; spalte < 4; spalte++) {
+            newState[zeile][spalte] = merged[spalte] || 0;
         }
     }
     
@@ -171,8 +80,8 @@ document.addEventListener('DOMContentLoaded', function() {
     updateDisplay();
     
     // Add event listeners to buttons
-    document.getElementById('upBtn').addEventListener('click', moveUp);
-    document.getElementById('downBtn').addEventListener('click', moveDown);
+    document.getElementById('upBtn').disabled = true;
+    document.getElementById('downBtn').disabled = true;
     document.getElementById('leftBtn').addEventListener('click', moveLeft);
-    document.getElementById('rightBtn').addEventListener('click', moveRight);
+    document.getElementById('rightBtn').disabled = true;
 });
