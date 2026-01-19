@@ -1,0 +1,20 @@
+{
+  "name": "2048-with-kids",
+  "version": "1.0.0",
+  "description": "A simple 2048 game implemented in TypeScript",
+  "main": "dist/game.js",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch"
+  },
+  "keywords": [
+    "2048",
+    "game",
+    "typescript"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  }
+}

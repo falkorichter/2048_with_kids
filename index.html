@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2048 Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="left-panel">
+            <h2>Game State</h2>
+            <textarea id="gameState" rows="10" cols="30"></textarea>
+        </div>
+        <div class="right-panel">
+            <h2>Controls</h2>
+            <div class="controls">
+                <button id="upBtn" class="control-btn">Up</button>
+                <div class="horizontal-controls">
+                    <button id="leftBtn" class="control-btn">Left</button>
+                    <button id="rightBtn" class="control-btn">Right</button>
+                </div>
+                <button id="downBtn" class="control-btn">Down</button>
+            </div>
+        </div>
+    </div>
+    <script src="dist/game.js"></script>
+</body>
+</html>
