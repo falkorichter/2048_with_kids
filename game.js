@@ -1,6 +1,8 @@
 let board = [];
 let score = 0;
 const gridSize = 4;
+const TILE_2_PROBABILITY = 0.9;
+const GAME_OVER_DELAY = 200;
 
 function initGame() {
     board = Array(gridSize).fill(null).map(() => Array(gridSize).fill(0));
@@ -23,7 +25,7 @@ function addNewTile() {
     
     if (emptyCells.length > 0) {
         const randomCell = emptyCells[Math.floor(Math.random() * emptyCells.length)];
-        board[randomCell.row][randomCell.col] = Math.random() < 0.9 ? 2 : 4;
+        board[randomCell.row][randomCell.col] = Math.random() < TILE_2_PROBABILITY ? 2 : 4;
     }
 }
 
@@ -92,7 +94,7 @@ function move(direction) {
         if (isGameOver()) {
             setTimeout(() => {
                 alert('Game Over! Your score: ' + score);
-            }, 200);
+            }, GAME_OVER_DELAY);
         }
     }
 }
@@ -132,6 +134,8 @@ function isGameOver() {
 function newGame() {
     initGame();
 }
+
+document.getElementById('new-game-button').addEventListener('click', newGame);
 
 document.addEventListener('keydown', (e) => {
     switch(e.key) {
