@@ -17,9 +17,14 @@ function updateDisplay() {
     textarea.value = formatGameState(gameState);
 }
 
+// Helper function to create a deep copy of the game state
+function cloneState(state) {
+    return JSON.parse(JSON.stringify(state));
+}
+
 // Move tiles up
 function moveUp() {
-    const newState = JSON.parse(JSON.stringify(gameState)); // Deep copy
+    const newState = cloneState(gameState);
     
     for (let col = 0; col < 4; col++) {
         // Collect non-zero values in this column
@@ -55,7 +60,7 @@ function moveUp() {
 
 // Move tiles down
 function moveDown() {
-    const newState = JSON.parse(JSON.stringify(gameState)); // Deep copy
+    const newState = cloneState(gameState);
     
     for (let col = 0; col < 4; col++) {
         // Collect non-zero values in this column (from bottom)
@@ -91,7 +96,7 @@ function moveDown() {
 
 // Move tiles left
 function moveLeft() {
-    const newState = JSON.parse(JSON.stringify(gameState)); // Deep copy
+    const newState = cloneState(gameState);
     
     for (let row = 0; row < 4; row++) {
         // Collect non-zero values in this row
@@ -127,7 +132,7 @@ function moveLeft() {
 
 // Move tiles right
 function moveRight() {
-    const newState = JSON.parse(JSON.stringify(gameState)); // Deep copy
+    const newState = cloneState(gameState);
     
     for (let row = 0; row < 4; row++) {
         // Collect non-zero values in this row (from right)
