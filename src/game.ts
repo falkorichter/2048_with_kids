@@ -1,6 +1,5 @@
 // Type definitions
 type GameState = number[][];
-type Row = number[];
 
 // Initial game state
 let gameState: GameState = [
