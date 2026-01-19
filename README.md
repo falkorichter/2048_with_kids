@@ -45,7 +45,7 @@ Then navigate to `http://localhost:8000/index.html`
 
 This project was migrated from JavaScript to TypeScript. The key changes include:
 
-- **Type Definitions**: Added type annotations for game state (`GameState` and `Row` types)
+- **Type Definitions**: Added type annotations for game state (`GameState` type for 2D number arrays)
 - **Strict Type Checking**: Enabled strict mode in TypeScript for better type safety
 - **Build Process**: TypeScript files in `src/` are compiled to JavaScript in `dist/`
 - **Configuration**: 
