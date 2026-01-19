@@ -28,6 +28,29 @@ function formatGameState(state) {
     return result;
 }
 
+// Parse the game state from the textarea
+function parseGameState() {
+    const textarea = document.getElementById('gameState');
+    const errorBox = document.getElementById('errorBox');
+    
+    try {
+        const parsed = JSON.parse(textarea.value);
+        
+        // Validate it's an array
+        if (!Array.isArray(parsed)) {
+            throw new Error('Game state must be an array');
+        }
+        
+        // Update gameState
+        gameState = parsed;
+        errorBox.textContent = ''; // Clear any previous errors
+        return true;
+    } catch (error) {
+        errorBox.textContent = 'Error: ' + error.message;
+        return false;
+    }
+}
+
 // Update the display
 function updateDisplay() {
     const textarea = document.getElementById('gameState');
@@ -41,6 +64,9 @@ function cloneState(state) {
 
 // Move tiles left
 function moveLeft() {
+    // Parse the current state from the textarea
+    parseGameState();
+    
     const newState = cloneState(gameState);
     
     for (let zeile = 0; zeile < 4; zeile++) {
