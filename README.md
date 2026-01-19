@@ -38,6 +38,8 @@ equals
 	* wenn der Nachbar gleich der aktuellen Zahl, aktuelle Zahl = `2* aktuelle Zahl` 
 	* wenn wir addieren nicht weiter addieren,
 
+hier eine formatierung in Google Sheets (Excel)
+https://docs.google.com/spreadsheets/d/1uBU2Kp_zImseKLnnJzhR959IRkZLWMMXPEapqi1Ahcw/edit?gid=0#gid=0
 	
 
 
