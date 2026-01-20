@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #faf8ef;
+}
+
+.container {
+    display: flex;
+    gap: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.left-panel, .right-panel {
+    flex: 1;
+}
+
+h2 {
+    margin-bottom: 15px;
+    color: #776e65;
+}
+
+#gameState {
+    width: 100%;
+    padding: 15px;
+    font-family: 'Courier New', monospace;
+    font-size: 16px;
+    border: 2px solid #bbada0;
+    border-radius: 5px;
+    background-color: #eee4da;
+    resize: vertical;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.horizontal-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.control-btn {
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #8f7a66;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    min-width: 100px;
+}
+
+.control-btn:hover {
+    background-color: #9f8a76;
+}
+
+.control-btn:active {
+    background-color: #7f6a56;
+}
+
+.control-btn:disabled {
+    background-color: #cdc1b4;
+    color: #9e9e9e;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.control-btn:disabled:hover {
+    background-color: #cdc1b4;
+}
+
+.error-box {
+    margin-top: 10px;
+    padding: 10px;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    color: #d32f2f;
+    background-color: #ffebee;
+    border: 2px solid #f44336;
+    border-radius: 5px;
+    min-height: 20px;
+    word-wrap: break-word;
+}
