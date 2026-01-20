@@ -69,6 +69,17 @@ h2 {
     background-color: #7f6a56;
 }
 
+.control-btn:disabled {
+    background-color: #cdc1b4;
+    color: #9e9e9e;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.control-btn:disabled:hover {
+    background-color: #cdc1b4;
+}
+
 .error-box {
     margin-top: 10px;
     padding: 10px;
