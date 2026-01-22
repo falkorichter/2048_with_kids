@@ -24,19 +24,19 @@ equals
 [left]
 ```
 
-1. Schritt: schiebe alles nach links
+1. Schritt: schiebe alles nach links, was nicht null ist.
 
 ```
 [
 	[2,2,0,0],
 	[0,0,0,0],
-	[0,2,0,0],
+	[2,2,4,0],
 	[0,0,0,0]
 ]
 ```
 2. Pro Zeile
-	* wenn der Nachbar gleich der aktuellen Zahl, aktuelle Zahl = `2* aktuelle Zahl` 
-	* wenn wir addieren nicht weiter addieren,
+	* wenn der Nachbar gleich der aktuellen Zahl, `aktuelle Zahl = 2* aktuelle Zahl` Addiere die beiden Nachbarn zusammen und schreibe es **links** hin.
+	* Ein ergebniss, nicht weiter addieren, aber es können 2 paare pro reihe addiert werdne
 
 	
 Pro Zeile (für von **"nach links"**:
