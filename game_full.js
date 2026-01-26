@@ -137,6 +137,20 @@ function newGame() {
 
 document.getElementById('new-game-button').addEventListener('click', newGame);
 
+// Add event listeners for control buttons
+document.getElementById('upBtn').addEventListener('click', () => move('up'));
+document.getElementById('downBtn').addEventListener('click', () => move('down'));
+document.getElementById('leftBtn').addEventListener('click', () => move('left'));
+document.getElementById('rightBtn').addEventListener('click', () => move('right'));
+
+// Prevent double-tap zoom on buttons for better mobile experience
+document.querySelectorAll('.control-btn').forEach(btn => {
+    btn.addEventListener('touchend', (e) => {
+        e.preventDefault();
+        btn.click();
+    });
+});
+
 document.addEventListener('keydown', (e) => {
     switch(e.key) {
         case 'ArrowUp':
