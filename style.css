@@ -68,3 +68,27 @@ h2 {
 .control-btn:active {
     background-color: #7f6a56;
 }
+
+.control-btn:disabled {
+    background-color: #cdc1b4;
+    color: #9e9e9e;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.control-btn:disabled:hover {
+    background-color: #cdc1b4;
+}
+
+.error-box {
+    margin-top: 10px;
+    padding: 10px;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    color: #d32f2f;
+    background-color: #ffebee;
+    border: 2px solid #f44336;
+    border-radius: 5px;
+    min-height: 20px;
+    word-wrap: break-word;
+}
