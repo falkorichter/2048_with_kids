@@ -145,9 +145,8 @@ document.getElementById('rightBtn').addEventListener('click', () => move('right'
 
 // Prevent double-tap zoom on buttons for better mobile experience
 document.querySelectorAll('.control-btn').forEach(btn => {
-    btn.addEventListener('touchend', (e) => {
+    btn.addEventListener('touchstart', (e) => {
         e.preventDefault();
-        btn.click();
     });
 });
 
