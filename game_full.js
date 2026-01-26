@@ -143,13 +143,6 @@ document.getElementById('downBtn').addEventListener('click', () => move('down'))
 document.getElementById('leftBtn').addEventListener('click', () => move('left'));
 document.getElementById('rightBtn').addEventListener('click', () => move('right'));
 
-// Prevent double-tap zoom on buttons for better mobile experience
-document.querySelectorAll('.control-btn').forEach(btn => {
-    btn.addEventListener('touchstart', (e) => {
-        e.preventDefault();
-    });
-});
-
 document.addEventListener('keydown', (e) => {
     switch(e.key) {
         case 'ArrowUp':
