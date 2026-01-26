@@ -48,6 +48,22 @@ function parseGameState(): boolean {
             throw new Error('Game state must be an array');
         }
         
+        // Validate it's a 4x4 array
+        if (parsed.length !== 4) {
+            throw new Error('Game state must be a 4x4 array');
+        }
+        
+        for (let i = 0; i < 4; i++) {
+            if (!Array.isArray(parsed[i]) || parsed[i].length !== 4) {
+                throw new Error('Game state must be a 4x4 array');
+            }
+            for (let j = 0; j < 4; j++) {
+                if (typeof parsed[i][j] !== 'number') {
+                    throw new Error('Game state must contain only numbers');
+                }
+            }
+        }
+        
         // Update gameState
         gameState = parsed;
         errorBox.textContent = ''; // Clear any previous errors
@@ -78,6 +94,7 @@ function cloneState(state: GameState): GameState {
 // Move tiles left
 function moveLeft(): void {
     // Parse the current state from the textarea
+    // If parsing fails, the error is displayed and previous state is used
     parseGameState();
     
     const newState = cloneState(gameState);
