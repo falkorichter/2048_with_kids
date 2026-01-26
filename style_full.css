@@ -161,3 +161,68 @@ h1 {
     font-size: 0.9em;
     line-height: 1.5;
 }
+
+.controls {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.horizontal-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.control-btn {
+    width: 80px;
+    height: 80px;
+    background: #8f7a66;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.1s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+}
+
+.control-btn:hover {
+    background: #9f8a76;
+}
+
+.control-btn:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Mobile-responsive styles */
+@media (max-width: 600px) {
+    .control-btn {
+        width: 70px;
+        height: 70px;
+        font-size: 1.8em;
+    }
+}
+
+@media (max-width: 400px) {
+    .control-btn {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5em;
+    }
+    
+    .controls {
+        margin-top: 20px;
+        gap: 8px;
+    }
+    
+    .horizontal-controls {
+        gap: 8px;
+    }
+}

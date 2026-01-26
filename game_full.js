@@ -137,6 +137,12 @@ function newGame() {
 
 document.getElementById('new-game-button').addEventListener('click', newGame);
 
+// Add event listeners for control buttons
+document.getElementById('upBtn').addEventListener('click', () => move('up'));
+document.getElementById('downBtn').addEventListener('click', () => move('down'));
+document.getElementById('leftBtn').addEventListener('click', () => move('left'));
+document.getElementById('rightBtn').addEventListener('click', () => move('right'));
+
 document.addEventListener('keydown', (e) => {
     switch(e.key) {
         case 'ArrowUp':
