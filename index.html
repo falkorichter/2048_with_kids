@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2048 Game</title>
+    <title>2048 Game - Learn to Code</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,14 +14,72 @@
             <div id="errorBox" class="error-box"></div>
         </div>
         <div class="right-panel">
-            <h2>Controls</h2>
-            <div class="controls">
-                <button id="upBtn" class="control-btn">Up</button>
-                <div class="horizontal-controls">
-                    <button id="leftBtn" class="control-btn">Left</button>
-                    <button id="rightBtn" class="control-btn">Right</button>
+            <h2>Controls & Code</h2>
+            
+            <!-- Up Control -->
+            <div class="control-group">
+                <button id="upBtn" class="control-btn">⬆️ Up</button>
+                <div class="code-section">
+                    <label class="code-label">moveUp(matrix):</label>
+                    <textarea id="upCode" class="code-input" rows="8" placeholder="// Write your code here&#10;// Return the new matrix after moving up"></textarea>
                 </div>
-                <button id="downBtn" class="control-btn">Down</button>
+            </div>
+            
+            <!-- Left and Right Controls -->
+            <div class="horizontal-group">
+                <div class="control-group">
+                    <button id="leftBtn" class="control-btn">⬅️ Left</button>
+                    <div class="code-section">
+                        <label class="code-label">moveLeft(matrix):</label>
+                        <textarea id="leftCode" class="code-input" rows="8" placeholder="// Write your code here&#10;// Return the new matrix after moving left"></textarea>
+                    </div>
+                </div>
+                
+                <div class="control-group">
+                    <button id="rightBtn" class="control-btn">➡️ Right</button>
+                    <div class="code-section">
+                        <label class="code-label">moveRight(matrix):</label>
+                        <textarea id="rightCode" class="code-input" rows="8" placeholder="// Write your code here&#10;// Return the new matrix after moving right"></textarea>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Down Control -->
+            <div class="control-group">
+                <button id="downBtn" class="control-btn">⬇️ Down</button>
+                <div class="code-section">
+                    <label class="code-label">moveDown(matrix):</label>
+                    <textarea id="downCode" class="code-input" rows="8" placeholder="// Write your code here&#10;// Return the new matrix after moving down"></textarea>
+                </div>
+            </div>
+            
+            <!-- Spawn Control -->
+            <div class="control-group">
+                <button id="spawnBtn" class="control-btn spawn-btn">🎲 Spawn New Tile</button>
+                <div class="code-section">
+                    <label class="code-label">spawnTile(matrix):</label>
+                    <textarea id="spawnCode" class="code-input" rows="8" placeholder="// Write your code here&#10;// Return the matrix with a new tile spawned&#10;// Typically spawn a 2 or 4 in an empty cell"></textarea>
+                </div>
+            </div>
+            
+            <!-- Check Game Over Control -->
+            <div class="control-group">
+                <button id="checkGameOverBtn" class="control-btn check-btn">✓ Check Game Over</button>
+                <div class="code-section">
+                    <label class="code-label">isGameOver(matrix):</label>
+                    <textarea id="gameOverCode" class="code-input" rows="8" placeholder="// Write your code here&#10;// Return true if game is over, false otherwise"></textarea>
+                </div>
+                <div id="gameOverResult" class="result-box"></div>
+            </div>
+            
+            <!-- Export/Import Controls -->
+            <div class="export-import-section">
+                <h3>Share Your Code</h3>
+                <div class="button-group">
+                    <button id="exportBtn" class="utility-btn">📤 Export Code</button>
+                    <button id="importBtn" class="utility-btn">📥 Import Code</button>
+                </div>
+                <textarea id="importExportArea" class="import-export-area" rows="5" placeholder="Paste markdown here to import code"></textarea>
             </div>
         </div>
     </div>

@@ -13,17 +13,30 @@ body {
 .container {
     display: flex;
     gap: 40px;
-    max-width: 800px;
+    max-width: 1400px;
     margin: 0 auto;
 }
 
-.left-panel, .right-panel {
+.left-panel {
+    flex: 0 0 350px;
+    position: sticky;
+    top: 20px;
+    height: fit-content;
+}
+
+.right-panel {
     flex: 1;
 }
 
 h2 {
     margin-bottom: 15px;
     color: #776e65;
+}
+
+h3 {
+    margin-bottom: 10px;
+    color: #776e65;
+    font-size: 18px;
 }
 
 #gameState {
@@ -37,20 +50,26 @@ h2 {
     resize: vertical;
 }
 
-.controls {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
+.control-group {
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.horizontal-controls {
+.horizontal-group {
     display: flex;
-    gap: 10px;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.horizontal-group .control-group {
+    flex: 1;
 }
 
 .control-btn {
-    padding: 15px 30px;
+    padding: 12px 24px;
     font-size: 16px;
     font-weight: bold;
     background-color: #8f7a66;
@@ -58,7 +77,9 @@ h2 {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    min-width: 100px;
+    min-width: 120px;
+    width: 100%;
+    margin-bottom: 10px;
 }
 
 .control-btn:hover {
@@ -69,15 +90,51 @@ h2 {
     background-color: #7f6a56;
 }
 
-.control-btn:disabled {
-    background-color: #cdc1b4;
-    color: #9e9e9e;
-    cursor: not-allowed;
-    opacity: 0.6;
+.control-btn.spawn-btn {
+    background-color: #ed9b40;
 }
 
-.control-btn:disabled:hover {
-    background-color: #cdc1b4;
+.control-btn.spawn-btn:hover {
+    background-color: #f5a855;
+}
+
+.control-btn.check-btn {
+    background-color: #3c8d3c;
+}
+
+.control-btn.check-btn:hover {
+    background-color: #4ca54c;
+}
+
+.code-section {
+    margin-top: 10px;
+}
+
+.code-label {
+    display: block;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.code-input {
+    width: 100%;
+    padding: 10px;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    border: 2px solid #bbada0;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    resize: vertical;
+    min-height: 100px;
+}
+
+.code-input:focus {
+    outline: none;
+    border-color: #8f7a66;
+    background-color: #fff;
 }
 
 .error-box {
@@ -91,4 +148,72 @@ h2 {
     border-radius: 5px;
     min-height: 20px;
     word-wrap: break-word;
+}
+
+.result-box {
+    margin-top: 10px;
+    padding: 10px;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    border: 2px solid #bbada0;
+    border-radius: 5px;
+    min-height: 40px;
+    word-wrap: break-word;
+}
+
+.result-box.success {
+    color: #2e7d32;
+    background-color: #e8f5e9;
+    border-color: #4caf50;
+}
+
+.result-box.error {
+    color: #c62828;
+    background-color: #ffebee;
+    border-color: #f44336;
+}
+
+.export-import-section {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.utility-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #5a9bd4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    flex: 1;
+}
+
+.utility-btn:hover {
+    background-color: #6aabea;
+}
+
+.utility-btn:active {
+    background-color: #4a8bc4;
+}
+
+.import-export-area {
+    width: 100%;
+    padding: 10px;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    border: 2px solid #bbada0;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    resize: vertical;
 }
