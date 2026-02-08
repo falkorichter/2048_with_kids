@@ -32,6 +32,16 @@ const STORAGE_KEYS = {
     gameOver: 'code_gameOver'
 };
 
+// Element IDs for code input fields
+const ELEMENT_IDS = {
+    up: 'upCode',
+    down: 'downCode',
+    left: 'leftCode',
+    right: 'rightCode',
+    spawn: 'spawnCode',
+    gameOver: 'gameOverCode'
+};
+
 // Format the game state for display
 function formatGameState(state) {
     let result = '[\n';
@@ -283,8 +293,7 @@ function importCode() {
         const match = markdown.match(pattern);
         if (match && match[1]) {
             const code = match[1].trim();
-            const elementId = key === 'gameOver' ? 'gameOverCode' : key + 'Code';
-            document.getElementById(elementId).value = code;
+            document.getElementById(ELEMENT_IDS[key]).value = code;
             saveCode(key, code);
         }
     }
@@ -316,12 +325,9 @@ document.addEventListener('DOMContentLoaded', function() {
     updateDisplay();
     
     // Setup code inputs with auto-save and formatting
-    setupCodeInput('upCode', 'up');
-    setupCodeInput('downCode', 'down');
-    setupCodeInput('leftCode', 'left');
-    setupCodeInput('rightCode', 'right');
-    setupCodeInput('spawnCode', 'spawn');
-    setupCodeInput('gameOverCode', 'gameOver');
+    for (const key in ELEMENT_IDS) {
+        setupCodeInput(ELEMENT_IDS[key], key);
+    }
     
     // Add event listeners to buttons
     document.getElementById('upBtn').addEventListener('click', moveUp);
